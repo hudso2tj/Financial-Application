@@ -18,4 +18,3 @@ of calculating various finances and savings related content.
 - Net worth calculator
 - Savings goal calculator
 - Tip calculator
-- 
