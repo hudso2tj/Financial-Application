@@ -19,12 +19,16 @@
 
   <ItemGroup>
     <Compile Remove="Pages\Privacy.cshtml.cs" />
+    <Compile Remove="Pages\Settings.cshtml.cs" />
     <Compile Remove="Pages\Shared\SalaryCalculator.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Pages\Privacy.cshtml" />
+    <Content Remove="Pages\Settings.cshtml" />
     <Content Remove="Pages\Shared\SalaryCalculator.cshtml" />
+    <Content Remove="wwwroot\Images\salary-calc.png" />
+    <Content Remove="wwwroot\Images\salary-calc.webp" />
   </ItemGroup>
 
 </Project>

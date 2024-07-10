@@ -1,44 +1,81 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Main Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Financial Application</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>A collection of tools and calculators to help you reach your personal finance goals!</p>
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Images/salary-calc.png" alt="Salary Calculator Image">
-                <div class="card-body">
-                    <h5 class="card-title">Salary Calculator</h5>
-                    <p class="card-text">Calculate your after-tax paycheck for various pay periods.</p>
-                    <a href="~/SalaryCalculator" class="btn btn-primary">Go to Salary Calculator</a>
+        <div class="col-md-4 mb-4">
+            <a href="~/SalaryCalculator" class="card-link">
+                <div class="card">
+                    <img class="card-img-top" src="Images/salary-calc.png" alt="Salary Calculator Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Salary Calculator</h5>
+                        <p class="card-text">Calculate your after-tax paycheck for various pay periods.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Images/retirement-calc.png" alt="Retirement Calculator Image">
-                <div class="card-body">
-                    <h5 class="card-title">Retirement Calculator</h5>
-                    <p class="card-text">Work in progress.</p>
-                    <a href="~/RetirementCalculator" class="btn btn-primary disabled">Go to Retirement Calculator</a>
+        <div class="col-md-4 mb-4">
+            <a href="~/RetirementCalculator" class="card-link">
+                <div class="card">
+                    <img class="card-img-top" src="Images/retirement-calc.png" alt="Retirement Calculator Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Retirement Calculator</h5>
+                        <p class="card-text">Work in progress.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Images/budget.png" alt="Budget Planner Image">
-                <div class="card-body">
-                    <h5 class="card-title">Budget Planner</h5>
-                    <p class="card-text">Work in progress.</p>
-                    <a href="~/BudgetPlanner" class="btn btn-primary disabled">Go to Budget Planner</a>
+        <div class="col-md-4 mb-4">
+            <a href="~/BudgetPlanner" class="card-link">
+                <div class="card">
+                    <img class="card-img-top" src="Images/budget.png" alt="Budget Planner Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Budget Planner</h5>
+                        <p class="card-text">Work in progress.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
+        <div class="col-md-4 mb-4">
+            <a href="~/TipCalculator" class="card-link">
+                <div class="card">
+                    <img class="card-img-top" src="" alt="Tip Calculator IMG">
+                    <div class="card-body">
+                        <h5 class="card-title">Tip Calculator</h5>
+                        <p class="card-text">Work in progress.<br />Calculate how much for a tip.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 mb-4">
+            <a href="~/NetWorthCalculator" class="card-link">
+                <div class="card">
+                    <img class="card-img-top" src="" alt="Net Worth Calculator IMG">
+                    <div class="card-body">
+                        <h5 class="card-title">Net Worth Calculator</h5>
+                        <p class="card-text">Work in progress.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 mb-4">
+            <a href="~/SavingsCalculator" class="card-link">
+                <div class="card">
+                    <img class="card-img-top" src="" alt="Savings Calculator IMG">
+                    <div class="card-body">
+                        <h5 class="card-title">Savings Calculator</h5>
+                        <p class="card-text">Work in progress.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>

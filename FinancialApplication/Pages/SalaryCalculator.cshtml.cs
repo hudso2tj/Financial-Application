@@ -23,7 +23,7 @@ namespace FinancialApplication.Pages
 
         [BindProperty]
         [Required(ErrorMessage = "Please select a retirement plan")]
-        public string retirement_plan { get; set; }
+        public int retirement_plan { get; set; }
 
         [BindProperty]
         [Required]
@@ -60,6 +60,12 @@ namespace FinancialApplication.Pages
         public double weekly_total_deductions { get; set; }
         public double weekly_net_pay { get; set; }
 
+        public double display_fedtax {  get; set; }
+        public double display_statetax { get; set; }
+        public double display_retirement { get; set; }
+        public string display_retirement_type { get; set; }
+
+
         public void OnPost()
         {
             // Adjust percentages
@@ -69,6 +75,9 @@ namespace FinancialApplication.Pages
             double social_security_rate = 0.062;
             double medicare_tax_rate = 0.0145;
             double medicare_surtax_rate = 0.009;
+            display_fedtax = fed_tax * 100;
+            display_statetax = state_tax * 100;
+            display_retirement = retirement_withholding * 100;
 
             // Yearly calculations
             int yearly_hours_worked = 2080;
@@ -103,6 +112,43 @@ namespace FinancialApplication.Pages
             weekly_retirement = weekly_gross_pay * retirement_withholding;
             weekly_total_deductions = weekly_fedtax_total + weekly_statetax_total + weekly_social_security + weekly_medicare_tax + weekly_retirement;
             weekly_net_pay = weekly_gross_pay - weekly_total_deductions;
+
+            if (retirement_plan == 2)
+            {
+                display_retirement_type = "Traditional";
+                yearly_retirement = yearly_gross_pay * retirement_withholding;
+                biweekly_retirement = biweekly_gross_pay * retirement_withholding;
+                weekly_retirement = weekly_gross_pay * retirement_withholding;
+                yearly_total_deductions = yearly_fedtax_total + yearly_statetax_total + yearly_social_security + yearly_medicare_tax + yearly_medicare_surtax + yearly_retirement;
+                biweekly_total_deductions = biweekly_fedtax_total + biweekly_statetax_total + biweekly_social_security + biweekly_medicare_tax + biweekly_retirement;
+                weekly_total_deductions = weekly_fedtax_total + weekly_statetax_total + weekly_social_security + weekly_medicare_tax + weekly_retirement;
+            }
+            
+            else if (retirement_plan == 1)
+            {
+                display_retirement_type = "Roth";
+                yearly_net_pay = yearly_gross_pay - (yearly_fedtax_total + yearly_statetax_total + yearly_social_security + yearly_medicare_tax + yearly_medicare_surtax);
+                biweekly_net_pay = biweekly_gross_pay - (biweekly_fedtax_total + biweekly_statetax_total + biweekly_social_security + biweekly_medicare_tax);
+                weekly_net_pay = weekly_gross_pay - (weekly_fedtax_total + weekly_statetax_total + weekly_social_security + weekly_medicare_tax);
+                yearly_retirement = yearly_net_pay * retirement_withholding;
+                biweekly_retirement = biweekly_net_pay * retirement_withholding;
+                weekly_retirement = weekly_net_pay * retirement_withholding;
+                yearly_total_deductions = yearly_fedtax_total + yearly_statetax_total + yearly_social_security + yearly_medicare_tax + yearly_medicare_surtax + yearly_retirement;
+                biweekly_total_deductions = biweekly_fedtax_total + biweekly_statetax_total + biweekly_social_security + biweekly_medicare_tax + biweekly_retirement;
+                weekly_total_deductions = weekly_fedtax_total + weekly_statetax_total + weekly_social_security + weekly_medicare_tax + weekly_retirement;
+            }
+         
         }
+
+        public void OnPostPopulate()
+        {
+            hourly_pay = 25;
+            fed_tax = 22;
+            state_tax = 5.45;
+            retirement_plan = 1;
+            retirement_withholding = 10;
+        }
+
+
     }
 }

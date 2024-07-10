@@ -1,0 +1,20 @@
+﻿@page
+@model FinancialApplication.Pages.TipCalculatorModel
+@{
+    ViewData["Title"] = "Tip Calculator";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Tip Calculator</h1>
+    <p>Use this tool to identify the amount of money required for a certain tip percentage.</p>
+</div>
+
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="total">Total:</label>
+            <input asp-for="total" class="form-control" placeholder="Enter total" />
+            <span asp-validation-for="total" class="text-danger"></span>
+        </div>
+    </form>
+</div>
