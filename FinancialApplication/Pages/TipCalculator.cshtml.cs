@@ -7,32 +7,31 @@ namespace FinancialApplication.Pages
     public class TipCalculatorModel : PageModel
     {
         // Model binding for user input
+        [BindProperty]
+        [Range(1, double.MaxValue, ErrorMessage = "Total must be a positive number.")]
+        public double? Total { get; set; }
 
         [BindProperty]
-        [Required]
-        [Range(0, double.MaxValue, ErrorMessage = "Total must be a positive number.")]
-        public double total { get; set; }
-
-        [BindProperty]
-        [Required]
         [Range(0, double.MaxValue, ErrorMessage = "Tip must be a positive number.")]
-        public double tip_percentage { get; set; }
+        public double? TipPercentage { get; set; }
 
         [BindProperty]
-        [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Must be a positive whole number.")]
-        public int num_people { get; set; }
+        public int? NumPeople { get; set; }
 
         // Properties to store calculated values
-        public double tip_amount { get; set; }
-        public double total_after_tip { get; set; }
-        public double total_per_person { get; set; }
+        public double TipAmount { get; set; }
+        public double TotalAfterTip { get; set; }
+        public double TotalPerPerson { get; set; }
 
         public void OnPost()
         {
-            tip_amount = total * tip_percentage;
-            total_after_tip = tip_amount + total;
-            total_per_person = total_after_tip / num_people;
+            if (Total.HasValue && TipPercentage.HasValue && NumPeople.HasValue)
+            {
+                TipAmount = (Total.Value * TipPercentage.Value) / 100;
+                TotalAfterTip = TipAmount + Total.Value;
+                TotalPerPerson = TotalAfterTip / NumPeople.Value;
+            }
         }
     }
 }

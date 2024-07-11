@@ -12,9 +12,45 @@
 <div class="container">
     <form method="post">
         <div class="form-group">
-            <label asp-for="total">Total:</label>
-            <input asp-for="total" class="form-control" placeholder="Enter total" />
-            <span asp-validation-for="total" class="text-danger"></span>
+            <label asp-for="Total">Total:</label>
+            <input asp-for="Total" class="form-control" />
+            <span asp-validation-for="Total" class="text-danger"></span>
         </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="TipPercentage">Tip Percentage:</label>
+            <input asp-for="TipPercentage" class="form-control" />
+            <span asp-validation-for="TipPercentage" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="NumPeople">Split:</label>
+            <input asp-for="NumPeople" class="form-control" />
+            <span asp-validation-for="NumPeople" class="text-danger"></span>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Calculate Tip</button>
     </form>
 </div>
+<br />
+
+@if (Model.TotalAfterTip > 0)
+{
+    <div class="container salary-breakdown">
+        <div class="breakdown-item">
+            <h3>Bill Details</h3>
+            <br />
+            <p><strong>Subtotal:</strong> <span>@Model.Total?.ToString("C")</span></p>
+            <p><strong>Tip Percentage:</strong> <span>@Model.TipPercentage</span>%</p>
+            <p><strong>Tip Amount:</strong> <span>@Model.TipAmount.ToString("C")</span></p>
+            <p><strong>Total:</strong> <span>@Model.TotalAfterTip.ToString("C")</span></p>
+            <p><strong>Total Per Person:</strong> <span>@Model.TotalPerPerson.ToString("C")</span></p>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -27,6 +27,8 @@
     <Content Remove="Pages\Privacy.cshtml" />
     <Content Remove="Pages\Settings.cshtml" />
     <Content Remove="Pages\Shared\SalaryCalculator.cshtml" />
+    <Content Remove="wwwroot\Images\budget.png" />
+    <Content Remove="wwwroot\Images\retirement-calc.png" />
     <Content Remove="wwwroot\Images\salary-calc.png" />
     <Content Remove="wwwroot\Images\salary-calc.webp" />
   </ItemGroup>
