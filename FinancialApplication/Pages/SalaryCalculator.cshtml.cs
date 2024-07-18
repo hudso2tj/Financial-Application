@@ -8,17 +8,17 @@ namespace FinancialApplication.Pages
     {
         [BindProperty]
         [Required]
-        [Range(0, double.MaxValue, ErrorMessage = "Hourly pay must be a positive number")]
+        [Range(1, double.MaxValue, ErrorMessage = "Must be a positive number")]
         public double hourly_pay { get; set; }
 
         [BindProperty]
         [Required]
-        [Range(0, 100, ErrorMessage = "Federal Tax Rate must be from 0 - 100")]
+        [Range(1, 100, ErrorMessage = "Must be a number from 1 - 100")]
         public double fed_tax { get; set; }
 
         [BindProperty]
         [Required]
-        [Range(0, 100, ErrorMessage = "State Tax Rate must be from 0 - 100")]
+        [Range(1, 100, ErrorMessage = "Must be a number from 1 - 100")]
         public double state_tax { get; set; }
 
         [BindProperty]
@@ -27,7 +27,7 @@ namespace FinancialApplication.Pages
 
         [BindProperty]
         [Required]
-        [Range(0, 100, ErrorMessage = "Retirement Withholding Rate must be from 0 - 100")]
+        [Range(0, 100, ErrorMessage = "Must be from 0 - 100")]
         public double retirement_withholding { get; set; }
 
         // Properties to store calculated values
@@ -139,16 +139,6 @@ namespace FinancialApplication.Pages
             }
          
         }
-
-        public void OnPostPopulate()
-        {
-            hourly_pay = 25;
-            fed_tax = 22;
-            state_tax = 5.45;
-            retirement_plan = 1;
-            retirement_withholding = 10;
-        }
-
 
     }
 }

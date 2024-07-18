@@ -18,8 +18,9 @@
         </div>
         <br />
         <div class="form-group">
-            <label asp-for="TipPercentage">Tip Percentage:</label>
+            <label>Tip Percentage:</label>
             <input asp-for="TipPercentage" class="form-control" />
+            <span asp-validation-for="TipPercentage" class="text-danger"></span>
             <span asp-validation-for="TipPercentage" class="text-danger"></span>
         </div>
         <br />

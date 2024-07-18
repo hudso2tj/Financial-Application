@@ -4,7 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Trevor's Finance App</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FinancialApplication.styles.css" asp-append-version="true" />
 </head>
@@ -26,19 +28,19 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/SalaryCalculator">Salary</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark disabled" asp-area="" asp-page="/RetirementCalculator">Retirement</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/RetirementCalculator">Retirement</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark disabled" asp-area="" asp-page="/BudgetPlanner">Budget</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/BudgetPlanner">Budget</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/TipCalculator">Tip</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark disabled" asp-area="" asp-page="/NetWorthCalculator">Net Worth</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/NetWorthCalculator">Net Worth</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark disabled" asp-area="" asp-page="/SavingsCalculator">Savings</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/SavingsCalculator">Savings</a>
                         </li>
                     </ul>
                 </div>
@@ -50,7 +52,6 @@
             @RenderBody()
         </main>
     </div>
-
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

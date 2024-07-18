@@ -12,7 +12,7 @@ namespace FinancialApplication.Pages
         public double? Total { get; set; }
 
         [BindProperty]
-        [Range(0, double.MaxValue, ErrorMessage = "Tip must be a positive number.")]
+        [Range(0, double.MaxValue, ErrorMessage = "Tip percentage must be a positive number.")]
         public double? TipPercentage { get; set; }
 
         [BindProperty]
@@ -26,9 +26,9 @@ namespace FinancialApplication.Pages
 
         public void OnPost()
         {
-            if (Total.HasValue && TipPercentage.HasValue && NumPeople.HasValue)
+            if (Total.HasValue && NumPeople.HasValue && TipPercentage.HasValue)
             {
-                TipAmount = (Total.Value * TipPercentage.Value) / 100;
+                TipAmount = (double)((Total.Value * TipPercentage) / 100);
                 TotalAfterTip = TipAmount + Total.Value;
                 TotalPerPerson = TotalAfterTip / NumPeople.Value;
             }

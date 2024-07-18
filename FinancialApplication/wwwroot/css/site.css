@@ -109,17 +109,16 @@ html, body {
 }
 
     .card-link:hover {
-        text-decoration: none; /* Remove underline on hover */
-        color: inherit; /* Inherit text color on hover */
+        text-decoration: none; 
+        color: inherit; 
     }
 
 .salary-breakdown .breakdown-item {
-    flex: 1;
-    margin-right: 10px;
-    padding: 15px; /* Added padding for better separation */
-    border: 1px solid #ccc; /* Optional: Adding border for visual separation */
-    border-color: #41839C; /* Border color for the breakdown items */
-    border-radius: 0.5rem; /* Optional: Adding border radius for rounded corners */
+    border: 1px solid #000; 
+    border-radius: 0.5rem; 
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #Roth,
@@ -128,13 +127,52 @@ html, body {
     margin-right: 20px;
 }
 
-label {
+.form-group label {
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
-/*.form-control {
+form-group radio {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.form-group #ten,
+#fifteen,
+#twenty,
+#Other {
+    margin-left: 20px;
+}
+
+.form-control input {
     width: 50%;
-}*/
+}
+
+input {
+    border: 2px solid #41839C;
+}
+
+    input:focus {
+        background-color: #41839C;
+    }
+
+.assets, .liabilities {
+    border: 1px solid #000;
+    border-color: #000;
+    border-radius: 0.5rem;
+    padding: 20px;
+}
+
+#tooltip {
+    height: 2em;
+    width: auto;
+}
+
+.networth {
+    margin: 10px 10px 10px 10px;
+    padding: 20px;
+    text-align: center;
+}
 
 /* Responsive adjustments */
 @media (max-width: 767.98px) {
