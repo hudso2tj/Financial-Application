@@ -4,6 +4,8 @@
     ViewData["Title"] = "Salary Calculator";
 }
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+
 <style>
     .salary-breakdown {
         display: flex;
@@ -47,6 +49,15 @@
                 }
 </style>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    });
+</script>
+
 <div class="text-center">
     <h1 class="display-4">Salary Calculator</h1>
 </div>
@@ -60,13 +71,17 @@
         </div>
         <br />
         <div class="form-group">
-            <label asp-for="fed_tax">Federal Withholding %</label>
+            <label asp-for="fed_tax">
+                Federal Withholding %
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Tax to be withheld by the federal government"><img id="tooltip" src="Images/tooltip.png" /></a>
+            </label>
             <input asp-for="fed_tax" class="form-control" placeholder="Enter federal income tax rate" />
             <span asp-validation-for="fed_tax" class="text-danger"></span>
         </div>
         <br />
         <div class="form-group">
             <label asp-for="state_tax">State Withholding %</label>
+            <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Tax to be withheld by state government"><img id="tooltip" src="Images/tooltip.png" /></a>
             <input asp-for="state_tax" class="form-control" placeholder="Enter state income tax rate" />
             <span asp-validation-for="state_tax" class="text-danger"></span>
         </div>
@@ -75,8 +90,10 @@
             <label>Retirement Type</label><br />
             <input type="radio" asp-for="retirement_plan" value="1" id="Roth" />
             <label asp-for="retirement_plan">Roth</label>
+            <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Taxes are taken out of paychecks when receieved"><img id="tooltip" src="Images/tooltip.png" /></a>
             <input type="radio" asp-for="retirement_plan" value="2" id="Trad" />
             <label asp-for="retirement_plan">Traditional</label>
+            <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Taxes are taken out when taxes are filed each year"><img id="tooltip" src="Images/tooltip.png" /></a>
             <span asp-validation-for="retirement_plan" class="text-danger"></span>
         </div>
         <br />
@@ -90,6 +107,7 @@
     </form>
 </div>
 <br />
+
 
 @if (Model.yearly_gross_pay > 0)
 {
