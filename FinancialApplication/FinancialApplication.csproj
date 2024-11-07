@@ -25,6 +25,8 @@
     <Compile Remove="Pages\Privacy.cshtml.cs" />
     <Compile Remove="Pages\Settings.cshtml.cs" />
     <Compile Remove="Pages\Shared\SalaryCalculator.cshtml.cs" />
+    <Compile Remove="Pages\Suggestion.cshtml.cs" />
+    <Compile Remove="Pages\Suggestions.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +34,7 @@
     <Content Remove="Pages\Settings.cshtml" />
     <Content Remove="Pages\Shared\SalaryCalculator.cshtml" />
     <Content Remove="Pages\Suggestion.cshtml" />
+    <Content Remove="Pages\Suggestions.cshtml" />
     <Content Remove="wwwroot\Images\budget.png" />
     <Content Remove="wwwroot\Images\retirement-calc.png" />
     <Content Remove="wwwroot\Images\salary-calc.png" />
@@ -43,10 +46,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\Suggestion.cshtml" />
   </ItemGroup>
 
 </Project>
