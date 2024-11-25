@@ -9,19 +9,24 @@
   <ItemGroup>
     <Compile Remove="DataClasses\**" />
     <Compile Remove="DB\**" />
+    <Compile Remove="Pages\Data Classes\**" />
     <Compile Remove="wwwroot\NewFolder1\**" />
     <Content Remove="DataClasses\**" />
     <Content Remove="DB\**" />
+    <Content Remove="Pages\Data Classes\**" />
     <Content Remove="wwwroot\NewFolder1\**" />
     <EmbeddedResource Remove="DataClasses\**" />
     <EmbeddedResource Remove="DB\**" />
+    <EmbeddedResource Remove="Pages\Data Classes\**" />
     <EmbeddedResource Remove="wwwroot\NewFolder1\**" />
     <None Remove="DataClasses\**" />
     <None Remove="DB\**" />
+    <None Remove="Pages\Data Classes\**" />
     <None Remove="wwwroot\NewFolder1\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\DBClass.cs" />
     <Compile Remove="Pages\Privacy.cshtml.cs" />
     <Compile Remove="Pages\Settings.cshtml.cs" />
     <Compile Remove="Pages\Shared\SalaryCalculator.cshtml.cs" />
