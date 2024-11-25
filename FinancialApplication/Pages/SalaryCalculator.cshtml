@@ -66,7 +66,7 @@
     <form method="post">
         <div class="form-group">
             <label asp-for="hourly_pay">Hourly Pay</label>
-            <input asp-for="hourly_pay" class="form-control" placeholder="Enter hourly wage" />
+            <input asp-for="hourly_pay" type="number" class="form-control" placeholder="Enter hourly wage" />
             <span asp-validation-for="hourly_pay" class="text-danger"></span>
         </div>
         <br />
@@ -75,14 +75,14 @@
                 Federal Withholding %
                 <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Tax to be withheld by the federal government"><img id="tooltip" src="Images/tooltip.png" /></a>
             </label>
-            <input asp-for="fed_tax" class="form-control" placeholder="Enter federal income tax rate" />
+            <input asp-for="fed_tax" type="number" class="form-control" placeholder="Enter federal income tax rate" />
             <span asp-validation-for="fed_tax" class="text-danger"></span>
         </div>
         <br />
         <div class="form-group">
             <label asp-for="state_tax">State Withholding %</label>
             <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Tax to be withheld by state government"><img id="tooltip" src="Images/tooltip.png" /></a>
-            <input asp-for="state_tax" class="form-control" placeholder="Enter state income tax rate" />
+            <input asp-for="state_tax" type="number" class="form-control" placeholder="Enter state income tax rate" />
             <span asp-validation-for="state_tax" class="text-danger"></span>
         </div>
         <br />
@@ -99,7 +99,7 @@
         <br />
         <div class="form-group">
             <label asp-for="retirement_withholding">Retirement Withholding %</label>
-            <input asp-for="retirement_withholding" class="form-control" placeholder="Enter retirement withholding rate" />
+            <input asp-for="retirement_withholding" type="number" class="form-control" placeholder="Enter retirement withholding rate" />
             <span asp-validation-for="retirement_withholding" class="text-danger"></span>
         </div>
         <br />

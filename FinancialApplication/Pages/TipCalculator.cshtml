@@ -13,13 +13,13 @@
     <form method="post">
         <div class="form-group">
             <label asp-for="Total">Total:</label>
-            <input asp-for="Total" class="form-control" />
+            <input asp-for="Total" type="number" class="form-control" />
             <span asp-validation-for="Total" class="text-danger"></span>
         </div>
         <br />
         <div class="form-group">
             <label>Tip Percentage:</label>
-            <input asp-for="TipPercentage" class="form-control" />
+            <input asp-for="TipPercentage" type="number" class="form-control" />
             <span asp-validation-for="TipPercentage" class="text-danger"></span>
             <span asp-validation-for="TipPercentage" class="text-danger"></span>
         </div>
